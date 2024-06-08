@@ -14,7 +14,7 @@
     
     <form>
         <label for="item">Select Item:</label>
-        <select id="item" name="item">
+        <select id="item" name="item" onchange="updateImage()">
             <option value="item1">Item 1</option>
             <option value="item2">Item 2</option>
             <option value="item3">Item 3</option>
@@ -36,8 +36,16 @@
         <!-- Order summary will be displayed here -->
     </div>
     
+    <img id="product-image" src="" alt="Product Image">
+    
     <script>
-        // Add your JavaScript code here for handling form submission and displaying order summary
+        function updateImage() {
+            var item = document.getElementById("item").value;
+            var imageUrl = ""; // Set the image URL based on the selected item
+            
+            // Update the image source
+            document.getElementById("product-image").src = imageUrl;
+        }
     </script>
 </body>
-  </html>
+</html>
